@@ -1,14 +1,19 @@
-def _run_user_interface()->[[]]:
-  _togo_list=[]
-	_todo_list=[]
-  for i in range(_get_count()):
-    _togo_list.extend(input())
-  for i in range(_get_count()):
-  	_todo_list.extend(input())
-  for i in _togo_list:
-    print(i)
-  for i in _todo_list:
-		print(i)
+from collections import namedtuple
+
+InputQueries = namedtuple('InputQuesries', ['togo','todo'])
+
+def _run_user_interface()->InputQueries:
+    _togo_list=[]
+    _todo_list=[]
+    for i in range(_get_count()):
+        _togo_list.append(input())
+    for i in range(_get_count()):
+        _todo_list.append(input())
+    for i in _togo_list:
+        print(i)
+    for i in _todo_list:
+        print(i)
+    return InputQueries(togo=_togo_list, todo=_todo_list)
 		
 def _get_count()->int:
 	while True:
