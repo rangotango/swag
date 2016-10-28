@@ -1,11 +1,16 @@
-def _run_user_interface()->None:
+def _run_user_interface()->[[]]:
   _togo_list=[]
-  for i in _location_count():
+	_todo_list=[]
+  for i in range(_get_count()):
     _togo_list.extend(input())
+  for i in range(_get_count()):
+  	_todo_list.extend(input())
   for i in _togo_list:
     print(i)
-    
-def _location_count()->int:
+  for i in _todo_list:
+		print(i)
+		
+def _get_count()->int:
 	while True:
 		count = input()
 		try:
@@ -13,7 +18,7 @@ def _location_count()->int:
 		except:
 			print('Invalid input! Try again.')
 		else:
-			if int_count<=1:
+			if int_count<=0:
 				print('Invalid input! Try again.')
 			else:
 				return int_count
